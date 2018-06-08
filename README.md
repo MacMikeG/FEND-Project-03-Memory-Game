@@ -1,11 +1,6 @@
 # FEND-Project-03-Memory-Game
     Project for Udacity Front-End Web Developer Nanodegree Scholarship
-    Clone of a classic cards game created in Pure JavaScript, HTML & CSS.
-
-## Table of Contents
-    * [Specification](#specification)
-    * [Game Play](#gameplay)
-
+    Clone of a classic cards game created in pure JavaScript, HTML & CSS.
 
 ## Specification:
     Elements of the game board:
