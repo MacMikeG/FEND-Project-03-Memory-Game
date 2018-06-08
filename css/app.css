@@ -1,0 +1,244 @@
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Tahoma', cursive;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    background-color: rgb(163, 204, 185);
+}
+
+.score-panel {
+    background-color: #aed1d8;
+}
+
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deckClass {
+    width: 660px;
+    background: linear-gradient(160deg, #d4ffcd 0%, #519447 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deckClass .cardClass {               /* default card state */
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;           /* icon isn't visible */
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deckClass .cardClass.openClass {          /* changes card color */
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deckClass .cardClass.showClass {          /* makes icon visible by incrising size from '0' */
+    font-size: 33px;
+}
+
+.deckClass .cardClass.matchClass {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+.deckClass .cardClass.cancelClass {
+    pointer-events: none;
+}
+
+
+
+
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+
+/* Modal */
+
+.modalDialog {
+    display: block;
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+
+
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+
+.restartModal {
+
+    cursor: pointer;
+}
+
+
+/* Responsive layout */
+
+@media screen and (max-width: 460px) {
+    .deckClass {
+        height: 340px;
+        width: 340px;
+    }
+    .deckClass .cardClass {
+        height: 50px;
+        width: 50px;
+        margin: 5px;  
+        margin-top: 0px;
+        margin-bottom: 0px;      
+    }
+    .score-panel {
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 461px) and (max-width: 620px) {
+    .deckClass {
+        height: 450px;
+        width: 450px;
+    }    
+    .deckClass .cardClass {
+        margin: 1px;                
+        height: 80px;
+        width: 80px;
+    }  
+}
+@media screen and (min-width: 621px) and (max-width: 660px) {
+    .deckClass {
+        height: 600px;
+        width: 600px;
+    }    
+    .deckClass .cardClass {
+        margin: 5px;
+        height: 100px;
+        width: 100px;
+    }  
+}
+@media screen and (min-width: 661px) {
+    .deckClass {
+        min-height: 680px;
+    }    
+}
+
+
+
+
+
+
+
+
+
+
